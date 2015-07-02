@@ -1,0 +1,48 @@
+set imap_user = "mve@pragmasec.nl"
+set imap_pass = "PASSWORD"
+
+set smtp_url = "smtp://mve@pragmasec.nl@smtp.gmail.com:587/"
+
+set smtp_pass = "PASSWORD"
+set from = "mve@pragmasec.nl"
+set realname = "Michiel van Es"
+
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed="+[Gmail]/Drafts"
+
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+set certificate_file=~/.mutt/certificates
+
+set move = no
+set timeout=45
+auto_view text/html
+# -*-muttrc-*-
+bind index G imap-fetch-mail
+# html email
+auto_view text/html
+set mailcap_path 	= ~/.mutt/mailcap
+# set editor
+set editor=vim
+# signature
+set signature="~/.mutt/signature-pragmasec"
+# Palette for use with the Linux console.  Black background.
+color hdrdefault blue black
+color quoted blue black
+color signature blue black
+color attachment red black
+color prompt brightmagenta black
+color message brightred black
+color error brightred black
+color indicator black red
+color status brightgreen blue
+color tree white black
+color normal white black
+color markers red black
+color search white black
+color tilde brightmagenta black
+color index blue black ~F
+color index red black "~N|~O"
+# color body brightwhite black '\*+[^*]+\*+'
+# color body brightwhite black '_+[^_]+_+'
