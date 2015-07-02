@@ -34,14 +34,11 @@ fi
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 #exec awesome &
-#xclock -geometry 50x50-1+1 &
 xautolock -time 10 -locker "i3lock -i background_image.png" &
 TERM='rxvt-unicode'
 COLORTERM='rxvt-unicode-256color'
-chromium &
+#chromium &
 parcellite -D &
 connman-ui-gtk &
-#exec xterm -rv -geometry 80x50+494+51 &
-exec xterm -rv -geometry 80x60+0+0 & 
-#exec i3 &
-exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
+exec i3 &
+#exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
