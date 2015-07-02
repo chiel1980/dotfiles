@@ -31,9 +31,9 @@ floating_modifier $mod
 
 # start a terminal
 bindsym Mod4+Return exec i3-sensible-terminal
-bindsym Mod4+t exec i3-sensible-terminal
+bindsym Mod4+t exec xterm -rv 
 bindsym Mod4+e exec atom 
-bindsym Mod4+w exec chromium 
+bindsym Mod4+w exec google-chrome-stable 
 bindsym Mod4+h exec hipchat 
 bindsym Mod4+c exec '/opt/telegram/Telegram' 
 bindsym Mod4+m exec urxvt -e mutt 
@@ -102,8 +102,8 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 #
 ## give names to workspaces
-set $tag1 "1:www"
-set $tag2 "2:term"
+set $tag1 "1:term"
+set $tag2 "2:www"
 set $tag3 "3:chat"
 set $tag4 "4:mail"
 bindsym $mod+1 workspace $tag1
@@ -188,15 +188,15 @@ bar {
     # Using custom i3status.conf
     status_command i3status 
 }
-#set $tag1 "1: www"
-#set $tag2 "2: term"
-#set $tag3 "3: chat"
-#set $tag4 "4: mail"
+#set $tag1 "1:term"
+#set $tag2 "2:www"
+#set $tag3 "3:chat"
+#set $tag4 "4:mail"
 # Assign URxvt terminals to workspace 1
-assign [class="Chromium"] 1:www
-assign [class="URxvt"] 2:term
-assign [class="Hipchat"] 3:chat
+assign [class="URxvt"] 1:term
+assign [class="Google-chrome-stable"] 2:www
+assign [class="HipChat"] 3:chat
 assign [class="Telegram"] 3:chat
 assign [class="Xterm"] 4:mail
 
-exec --no-startup-id i3-msg 'workspace 1:www; exec chromium; workspace 2:term; exec urxvt; workspace 3:chat; exec /opt/telegram/Telegram;workspace 4:mail; exec xterm -e mutt'
+exec --no-startup-id i3-msg 'workspace 1:www; exec google-chrome-stable; workspace 2:term; exec urxvt; workspace 3:chat; exec /opt/telegram/Telegram; workspace 3:chat; exec hipchat;workspace 4:mail; exec xterm -e mutt'
