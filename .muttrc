@@ -1,9 +1,9 @@
 set imap_user = "mve@pragmasec.nl"
-set imap_pass = "PASSWORD"
+set imap_pass = "**********"
 
 set smtp_url = "smtp://mve@pragmasec.nl@smtp.gmail.com:587/"
 
-set smtp_pass = "PASSWORD"
+set smtp_pass = "**********"
 set from = "mve@pragmasec.nl"
 set realname = "Michiel van Es"
 
@@ -46,3 +46,5 @@ color index blue black ~F
 color index red black "~N|~O"
 # color body brightwhite black '\*+[^*]+\*+'
 # color body brightwhite black '_+[^_]+_+'
+set connect_timeout=-10
+set fast_reply=yes
