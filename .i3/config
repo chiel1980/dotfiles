@@ -31,7 +31,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym Mod4+Return exec i3-sensible-terminal
-bindsym Mod4+t exec terminator 
+bindsym Mod4+t exec urxvt 
 bindsym Mod4+e exec atom 
 bindsym Mod4+w exec midori 
 bindsym Mod4+h exec hipchat 
@@ -194,11 +194,11 @@ bar {
 #set $tag3 "3:chat"
 #set $tag4 "4:mail"
 # Assign URxvt terminals to workspace 1
-assign [class="URxvt"] 1:term
+assign [class="Terminator"] 1:term
 assign [class="Midori"] 2:www
 assign [class="HipChat"] 3:chat
 assign [class="Telegram"] 3:chat
 assign [class="XTerm"] 4:mail
 assign [class="VirtualBox"] 5:virtualbox
 
-exec --no-startup-id i3-msg 'workspace 1:www; exec midori; workspace 2:term; exec urxvt; workspace 3:chat; exec /opt/telegram/Telegram; workspace 3:chat; exec hipchat;workspace 4:mail; exec xterm -e mutt'
+exec --no-startup-id i3-msg 'workspace 1:term; exec terminator; workspace 2:www; exec midori; workspace 3:chat; exec /opt/telegram/Telegram; workspace 3:chat; exec hipchat;workspace 4:mail; exec xterm -e mutt'
