@@ -1,9 +1,9 @@
 set imap_user = "mve@pragmasec.nl"
-set imap_pass = "**********"
+set imap_pass = "************"
 
 set smtp_url = "smtp://mve@pragmasec.nl@smtp.gmail.com:587/"
 
-set smtp_pass = "**********"
+set smtp_pass = "********"
 set from = "mve@pragmasec.nl"
 set realname = "Michiel van Es"
 
@@ -16,7 +16,6 @@ set message_cachedir=~/.mutt/cache/bodies
 set certificate_file=~/.mutt/certificates
 
 set move = no
-set timeout=45
 auto_view text/html
 # -*-muttrc-*-
 bind index G imap-fetch-mail
@@ -48,3 +47,14 @@ color index red black "~N|~O"
 # color body brightwhite black '_+[^_]+_+'
 set connect_timeout=-10
 set fast_reply=yes
+#-------------------------#
+# Misc. optional settings #
+#-------------------------#
+# Check for mail every minute for current IMAP mailbox every 1 min
+set timeout         = 60
+# Check for new mail in ALL mailboxes every 2 min
+set mail_check      = 120
+# keep imap connection alive by polling intermittently (time in seconds)
+set imap_keepalive  = 300
+# allow mutt to open new imap connection automatically
+unset imap_passive
