@@ -11,7 +11,8 @@ set quit             # don't ask, just do!!
 unset mark_old       # read/new is good enough for me
 
 # sort/threading
-set sort     = threads
+#set sort     = threads
+set sort     = date 
 set sort_aux = reverse-last-date-received
 set sort_re
 
@@ -38,12 +39,13 @@ set mbox_type   = Maildir
 set sendmail    = /usr/bin/msmtp
 
 set folder      = ~/Mail
-set spoolfile   = "+INBOX"
+#set spoolfile   = "+INBOX"
+set spoolfile         = "+Gmail/INBOX"
 set mbox        = "+[Gmail]/All Mail"
 set postponed   = "+[Gmail]/Drafts"
 unset record
 
-mailboxes +INBOX
+#mailboxes +INBOX
 
 macro index D \
     "<save-message>+[Gmail]/Trash<enter>" \
