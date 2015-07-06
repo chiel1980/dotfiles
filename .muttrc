@@ -1,60 +1,54 @@
-set imap_user = "mve@pragmasec.nl"
-set imap_pass = "************"
+# main options
+set realname   = "Michiel van Es"
+set from       = "mve@pragmasec.nl"
+set mail_check = 0
+set envelope_from
 
-set smtp_url = "smtp://mve@pragmasec.nl@smtp.gmail.com:587/"
+unset move           # gmail does that
+set delete           # don't ask, just do
+unset confirmappend  # don't ask, just do!
+set quit             # don't ask, just do!!
+unset mark_old       # read/new is good enough for me
 
-set smtp_pass = "********"
-set from = "mve@pragmasec.nl"
-set realname = "Michiel van Es"
+# sort/threading
+set sort     = threads
+set sort_aux = reverse-last-date-received
+set sort_re
 
-set folder = "imaps://imap.gmail.com:993"
-set spoolfile = "+INBOX"
-set postponed="+[Gmail]/Drafts"
+# look and feel
+set pager_index_lines = 8
+set pager_context     = 5
+set pager_stop
+set menu_scroll
+set smart_wrap
+set tilde
+unset markers
 
-set header_cache=~/.mutt/cache/headers
-set message_cachedir=~/.mutt/cache/bodies
-set certificate_file=~/.mutt/certificates
+# composing 
+set fcc_attach
+unset mime_forward
+set forward_format = "Fwd: %s"
+set include
+set forward_quote
 
-set move = no
-auto_view text/html
-# -*-muttrc-*-
-bind index G imap-fetch-mail
-# html email
-auto_view text/html
-set mailcap_path 	= ~/.mutt/mailcap
-# set editor
-set editor=vim
-# signature
-set signature="~/.mutt/signature-pragmasec"
-# Palette for use with the Linux console.  Black background.
-color hdrdefault blue black
-color quoted blue black
-color signature blue black
-color attachment red black
-color prompt brightmagenta black
-color message brightred black
-color error brightred black
-color indicator black red
-color status brightgreen blue
-color tree white black
-color normal white black
-color markers red black
-color search white black
-color tilde brightmagenta black
-color index blue black ~F
-color index red black "~N|~O"
-# color body brightwhite black '\*+[^*]+\*+'
-# color body brightwhite black '_+[^_]+_+'
-set connect_timeout=-10
-set fast_reply=yes
-#-------------------------#
-# Misc. optional settings #
-#-------------------------#
-# Check for mail every minute for current IMAP mailbox every 1 min
-set timeout         = 60
-# Check for new mail in ALL mailboxes every 2 min
-set mail_check      = 120
-# keep imap connection alive by polling intermittently (time in seconds)
-set imap_keepalive  = 300
-# allow mutt to open new imap connection automatically
-unset imap_passive
+ignore *                               # first, ignore all headers
+unignore from: to: cc: date: subject:  # then, show only these
+hdr_order from: to: cc: date: subject: # and in this order
+set mbox_type   = Maildir
+set sendmail    = /usr/bin/msmtp
+
+set folder      = ~/Mail
+set spoolfile   = "+INBOX"
+set mbox        = "+[Gmail]/All Mail"
+set postponed   = "+[Gmail]/Drafts"
+unset record
+
+mailboxes +INBOX
+
+macro index D \
+    "<save-message>+[Gmail]/Trash<enter>" \
+    "move message to the trash"
+
+macro index S \
+    "<save-message>+[Gmail]/Spam<enter>" \
+    "mark message as spam"
