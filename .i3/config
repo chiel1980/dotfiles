@@ -37,8 +37,9 @@ bindsym Mod4+w exec midori
 bindsym Mod4+h exec hipchat 
 bindsym Mod4+c exec '/opt/telegram/Telegram' 
 bindsym Mod4+m exec xterm -rv -e mutt 
-bindsym Mod4+x exec xterm -e xkill 
+bindsym Mod4+k exec xkill 
 bindsym Mod4+l exec i3lock 
+bindsym Mod4+v exec virtualbox 
 
 
 # kill focused window
@@ -201,4 +202,4 @@ assign [class="Telegram"] 3:chat
 assign [class="XTerm"] 4:mail
 assign [class="VirtualBox"] 5:virtualbox
 
-exec --no-startup-id i3-msg 'workspace 1:term; exec terminator; workspace 2:www; exec midori; workspace 3:chat; exec /opt/telegram/Telegram; workspace 3:chat; exec hipchat;workspace 4:mail; exec xterm -e mutt'
+exec --no-startup-id i3-msg 'workspace 1:term; exec terminator; workspace 2:www; exec midori; workspace 3:chat; exec /opt/telegram/Telegram; workspace 3:chat; exec hipchat; workspace 4:mail; exec xterm -e mutt; workspace 5:virtualbox; exec virtualbox'
