@@ -110,28 +110,29 @@ set $tag2 "2:www"
 set $tag3 "3:chat"
 set $tag4 "4:mail"
 set $tag5 "5:virtualbox"
+set $tag5 "6:filemanager"
 bindsym $mod+1 workspace $tag1
 bindsym $mod+2 workspace $tag2
 bindsym $mod+3 workspace $tag3
 bindsym $mod+4 workspace $tag4
 bindsym $mod+5 workspace $tag5
+bindsym $mod+6 workspace $tag6
 bindsym $mod+Shift+1 move container to workspace $tag1
 bindsym $mod+Shift+2 move container to workspace $tag2
 bindsym $mod+Shift+3 move container to workspace $tag3
 bindsym $mod+Shift+4 move container to workspace $tag4
 bindsym $mod+Shift+5 move container to workspace $tag5
+bindsym $mod+Shift+6 move container to workspace $tag6
 ##
 #
 
 # switch to workspace
-bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
@@ -203,5 +204,6 @@ assign [class="HipChat"] 3:chat
 assign [class="Telegram"] 3:chat
 assign [class="XTerm"] 4:mail
 assign [class="VirtualBox"] 5:virtualbox
+assign [class="Thunar"] 6:filemanager
 
-exec --no-startup-id i3-msg 'workspace 1:term; exec terminator; workspace 2:www; exec chromium; workspace 3:chat; exec /opt/telegram/Telegram; workspace 3:chat; exec hipchat; workspace 4:mail; exec xterm -e mutt; workspace 5:virtualbox; exec virtualbox'
+exec --no-startup-id i3-msg 'workspace 1:term; exec terminator; workspace 2:www; exec chromium; workspace 3:chat; exec /opt/telegram/Telegram; workspace 3:chat; exec hipchat; workspace 4:mail; exec xterm -e mutt; workspace 5:virtualbox; exec virtualbox; workspace 6:filemanager; exec thunar'
