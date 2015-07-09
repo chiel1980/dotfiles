@@ -40,5 +40,9 @@ COLORTERM='rxvt-unicode-256color'
 #chromium &
 parcellite -D &
 connman-ui-gtk &
-exec i3 &
-#exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
+## OSD
+dunst &
+pulseaudio --start &
+pa-applet &
+#exec i3 &
+exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
