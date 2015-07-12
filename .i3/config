@@ -33,7 +33,7 @@ floating_modifier $mod
 bindsym Mod4+Return exec i3-sensible-terminal
 bindsym Mod4+t exec urxvt 
 bindsym Mod4+e exec atom 
-bindsym Mod4+w exec chromium 
+bindsym Mod4+w exec midori 
 bindsym Mod4+h exec hipchat 
 bindsym Mod4+c exec '/opt/telegram/Telegram' 
 bindsym Mod4+m exec xterm -rv -e mutt 
@@ -111,30 +111,29 @@ set $tag3 "3:chat"
 set $tag4 "4:mail"
 set $tag5 "5:virtualbox"
 set $tag6 "6:filemanager"
-set $tag7 "7:backup"
 bindsym $mod+1 workspace $tag1
 bindsym $mod+2 workspace $tag2
 bindsym $mod+3 workspace $tag3
 bindsym $mod+4 workspace $tag4
 bindsym $mod+5 workspace $tag5
 bindsym $mod+6 workspace $tag6
-bindsym $mod+7 workspace $tag7
 bindsym $mod+Shift+1 move container to workspace $tag1
 bindsym $mod+Shift+2 move container to workspace $tag2
 bindsym $mod+Shift+3 move container to workspace $tag3
 bindsym $mod+Shift+4 move container to workspace $tag4
 bindsym $mod+Shift+5 move container to workspace $tag5
 bindsym $mod+Shift+6 move container to workspace $tag6
-bindsym $mod+Shift+7 move container to workspace $tag7
 ##
 #
 
 # switch to workspace
+bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
+bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
@@ -200,12 +199,11 @@ bar {
 #set $tag4 "4:mail"
 # Assign URxvt terminals to workspace 1
 assign [class="Terminator"] 1:term
-assign [class="Chromium"] 2:www
+assign [class="Midori"] 2:www
 assign [class="HipChat"] 3:chat
 assign [class="Telegram"] 3:chat
 assign [class="XTerm"] 4:mail
 assign [class="VirtualBox"] 5:virtualbox
 assign [class="Thunar"] 6:filemanager
-assign [class="App.py"] 7:backup
 
-exec --no-startup-id i3-msg 'workspace 1:term; exec terminator; workspace 2:www; exec chromium; workspace 3:chat; exec /opt/telegram/Telegram; workspace 3:chat; exec hipchat; workspace 4:mail; exec xterm -e mutt; workspace 5:virtualbox; exec virtualbox; workspace 6:filemanager; exec thunar ; workspace 7:backup; exec backintime-qt4'
+exec --no-startup-id i3-msg 'workspace 1:term; exec terminator; workspace 2:www; exec midori; workspace 3:chat; exec /opt/telegram/Telegram; workspace 3:chat; exec hipchat; workspace 4:mail; exec xterm -e mutt; workspace 5:virtualbox; exec virtualbox; workspace 6:filemanager; exec thunar' 
