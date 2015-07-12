@@ -33,7 +33,7 @@ floating_modifier $mod
 bindsym Mod4+Return exec i3-sensible-terminal
 bindsym Mod4+t exec urxvt 
 bindsym Mod4+e exec atom 
-bindsym Mod4+w exec midori 
+bindsym Mod4+w exec chromium 
 bindsym Mod4+h exec hipchat 
 bindsym Mod4+c exec '/opt/telegram/Telegram' 
 bindsym Mod4+m exec xterm -rv -e mutt 
@@ -203,7 +203,7 @@ assign [class="Midori"] 2:www
 assign [class="HipChat"] 3:chat
 assign [class="Telegram"] 3:chat
 assign [class="XTerm"] 4:mail
-assign [class="VirtualBox"] 5:virtualbox
+assign [class="Google-chrome-stable"] 5:virtualbox
 assign [class="Thunar"] 6:filemanager
 
-exec --no-startup-id i3-msg 'workspace 1:term; exec terminator; workspace 2:www; exec midori; workspace 3:chat; exec /opt/telegram/Telegram; workspace 3:chat; exec hipchat; workspace 4:mail; exec xterm -e mutt; workspace 5:virtualbox; exec virtualbox; workspace 6:filemanager; exec thunar' 
+exec --no-startup-id i3-msg 'workspace 1:term; exec terminator; workspace 2:www; exec google-chrome-stable; workspace 3:chat; exec /opt/telegram/Telegram; workspace 3:chat; exec hipchat; workspace 4:mail; exec xterm -e mutt; workspace 5:virtualbox; exec virtualbox; workspace 6:filemanager; exec thunar' 
