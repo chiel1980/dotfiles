@@ -33,11 +33,10 @@ floating_modifier $mod
 bindsym Mod4+Return exec i3-sensible-terminal
 bindsym Mod4+t exec urxvt 
 bindsym Mod4+e exec atom 
-bindsym Mod4+w exec chromium 
+bindsym Mod4+w exec midori 
 bindsym Mod4+h exec hipchat 
 bindsym Mod4+c exec '/opt/telegram/Telegram' 
 bindsym Mod4+m exec xterm -rv -e mutt 
-bindsym Mod4+x exec xkill 
 bindsym Mod4+l exec i3lock 
 bindsym Mod4+v exec virtualbox 
 bindsym Mod4+k exec keepassx 
