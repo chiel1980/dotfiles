@@ -41,6 +41,7 @@ bindsym Mod4+l exec i3lock
 bindsym Mod4+v exec virtualbox 
 bindsym Mod4+k exec keepassx 
 bindsym Mod4+f exec thunar 
+bindsym Mod4+s exec scrot 
 
 
 # kill focused window
