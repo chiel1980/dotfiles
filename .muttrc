@@ -1,7 +1,8 @@
 # main options
 set realname   = "Michiel van Es"
 set from       = "mve@pragmasec.nl"
-set mail_check = 0
+set timeout = 3          # idle time before scanning
+set mail_check = 0       # minimum time between scans
 set envelope_from
 
 unset move           # gmail does that
@@ -63,6 +64,7 @@ set mailcap_path 	= ~/.mutt/mailcap
 set editor=vim
 # signature
 set signature="~/.mutt/signature-pragmasec"
+set sig_on_top=yes
 # Palette for use with the Linux console.  Black background.
 color hdrdefault blue black
 color quoted blue black
