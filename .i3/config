@@ -199,11 +199,11 @@ bar {
 #set $tag4 "4:mail"
 # Assign URxvt terminals to workspace 1
 assign [class="Terminator"] 1:term
-assign [class="Google-chrome-stable"] 2:www
+assign [class="Midori"] 2:www
 assign [class="HipChat"] 3:chat
 assign [class="Telegram"] 3:chat
 assign [class="XTerm"] 4:mail
 assign [class="VirtualBox"] 5:virtualbox
 assign [class="Thunar"] 6:filemanager
 
-exec --no-startup-id i3-msg 'workspace 1:term; exec terminator; workspace 2:www; exec google-chrome-stable; workspace 3:chat; exec /opt/telegram/Telegram; workspace 3:chat; exec hipchat; workspace 4:mail; exec xterm -e mutt; workspace 5:virtualbox; exec virtualbox; workspace 6:filemanager; exec thunar' 
+exec --no-startup-id i3-msg 'workspace 1:term; exec terminator; workspace 2:www; exec midori; workspace 3:chat; exec /opt/telegram/Telegram; workspace 3:chat; exec hipchat; workspace 4:mail; exec xterm -e mutt; workspace 5:virtualbox; exec virtualbox; workspace 6:filemanager; exec thunar' 
