@@ -1,27 +1,28 @@
 servers = (
- {
+  {
     address = "chat.pragmasec.nl";
     chatnet = "PragmaSEC";
     port = "6667";
     use_ssl = "yes";
     ssl_verify = "yes";
-    password = "***********";
+    password = "************";
     autoconnect = "yes";
   }
 );
-# I'm a freenode user all the way man
-chatnets = {
-  PragmaSEC = {
-    type = "IRC";
-  };
-};
-  # Channels I hang out in a lot. Change these to your own.
-  "channels",
-  { name = "#PragmaSEC"; autojoin = "yes"; }
-);
+chatnets = { PragmaSEC = { type = "IRC"; }; };
+name = "#PragmaSEC";
+autojoin = "yes";
 settings = {
-  core = { real_name = "Michiel van Es"; user_name = "essie"; nick = "essie"; };
+  core = {
+    real_name = "Michiel van Es";
+    user_name = "essie";
+    nick = "essie";
+  };
   "fe-text" = { actlist_sort = "refnum"; };
+  # perl script for os x notify - comment for linux and use different plugin
+  "perl/core/scripts" = { 
+    notifier_on_regex = "(?=^(?:(?!essie).)*$).*";
+  };
 };
 aliases = {
   J = "join";
@@ -73,3 +74,6 @@ aliases = {
   RESET = "set -default";
 };
 
+channels = (
+  { name = "#PragmaSEC"; chatnet = "PragmaSEC"; autojoin = "yes"; }
+);
