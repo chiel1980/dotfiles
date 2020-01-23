@@ -59,3 +59,7 @@ color index blue black ~F
 color index red black "~N|~O"
 # color body brightwhite black '\*+[^*]+\*+'
 # color body brightwhite black '_+[^_]+_+'
+
+# cache so we can store it on disk
+set header_cache = "~/.mutt/header-cache"
+set message_cachedir = "~/.mutt/message-cache"
