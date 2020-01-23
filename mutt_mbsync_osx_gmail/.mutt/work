@@ -1,0 +1,61 @@
+# credentials
+set smtp_url = "smtp://mve@pragmasec.nl@smtp.gmail.com:587"
+set smtp_pass = *yourgmailapppass* 
+
+# Folders to check and use
+set folder = "~/.mutt/mailbox/work"
+set spoolfile = "~/.mutt/mailbox/work/inbox"
+set postponed = "~/.mutt/mailbox/work/drafts"
+set trash = "+/trash"
+set record = ""
+
+# From who
+set from = "mve@pragmasec.nl"
+set realname = "Michiel van Es"
+
+#How often to check
+set timeout = 3          # idle time before scanning
+set mail_check = 30       # minimum time between scans
+set envelope_from
+set fast_reply
+set include
+set ssl_force_tls   = yes
+set ssl_starttls=yes
+set charset = "utf-8"
+
+# sort/threading
+set sort = date
+set sort = reverse-threads
+
+# Collapse all threads
+set uncollapse_new = yes # (default)
+
+# html email
+auto_view text/html
+set mailcap_path        = ~/.mutt/mailcap
+# set editor
+set editor=vim
+# signature
+set signature="~/.mutt/signature-pragmasec"
+set sig_on_top=yes
+set fast_reply=yes
+
+# Palette for use with the Linux console.  Black background.
+color hdrdefault blue black
+color quoted blue black
+color signature blue black
+color attachment red black
+#color prompt brightmagenta black
+color message brightred black
+color error brightred black
+color indicator black red
+color status brightgreen blue
+color tree white black
+color normal white black
+color markers red black
+color search white black
+color tilde brightmagenta black
+color index blue black ~F
+color index red black "~N|~O"
+# color body brightwhite black '\*+[^*]+\*+'
+# color body brightwhite black '_+[^_]+_+'
